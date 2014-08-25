@@ -12,6 +12,19 @@ A working Desgnate and neutron services
 
 # Configuration
 
+#### vim /etc/neutron/api-paste.ini
+
+```
+[filter:designate-extention]
+paste.filter_factory = symc.designate_middleware:designate_factory
+designate_url=http://10.50.130.45:9001/v1
+fip_tld=example.com # like a parent domain to create tenant domains.
+ttl=3600
+```
+#### add the filter "designate-extention" to the [composite:neutronapi_v2_0] as below.
+keystone = authtoken keystonecontext ```designate-extention``` extensions neutronapiapp_v2_0
+
+
 # License
 
 Copyright 2014 Symantec Corporation.
