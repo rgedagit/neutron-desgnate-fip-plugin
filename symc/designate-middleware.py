@@ -19,7 +19,6 @@ import __main__
 import ConfigParser
 from oslo.config import cfg
 
-
 class DesignateMiddleware(object):
     def __init__(self, app, conf):
         self._logger = logging.getLogger(__name__)
