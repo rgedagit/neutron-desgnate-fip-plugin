@@ -17,7 +17,7 @@ A working Desgnate and neutron services
 ```
 [filter:designate-extention]
 paste.filter_factory = symc.designate_middleware:designate_factory
-designate_url=http://10.50.130.45:9001/v1
+designate_url=http://<designate VIP/NODE>/v1
 fip_tld=example.com # like a parent domain to create tenant domains.
 ttl=3600
 ```
